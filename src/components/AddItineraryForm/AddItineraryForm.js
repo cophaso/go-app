@@ -1,0 +1,97 @@
+import React, { Component } from 'react'
+import { Button, Input, Required } from '../Utils/Utils'
+import ItinerariesApiService from '../../services/Itinerary-api-service';
+// import DatePicker from "react-datepicker";
+// import "react-datepicker/dist/react-datepicker.css";
+
+
+export default class AddItineraryForm extends Component {
+  static defaultProps = {
+    onAddItinerarySuccess: () => {}
+  }
+
+  state = {
+    error: null ,
+    // startDate: new Date()
+  };
+ 
+  // handleChange = date => {
+  //   this.setState({
+  //     startDate: date
+  //   });
+  // };
+
+  handleSubmit = ev => {
+    ev.preventDefault()
+    const { title, start_date, end_date } = ev.target
+
+    this.setState({ error: null })
+    console.log({
+      title: title.value,
+      start_date: start_date.value,
+      end_date: end_date.value,
+      user_id: localStorage.getItem('user_id')
+    })
+    
+    ItinerariesApiService.postItinerary({
+      title: title.value,
+      start_date: start_date.value,
+      end_date: end_date.value,
+      user_id: localStorage.getItem('user_id')
+    })
+      .then(itinerary => {
+        title.value = ''
+        this.props.onAddItinerarySuccess()
+      })
+      .catch(res => {
+        this.setState({ error: res.error })
+      })
+  }
+
+  render() {
+    const { error } = this.state
+    return (
+      <form
+      className='AddItineraryForm'
+        onSubmit={this.handleSubmit}
+      >
+        <div role='alert'>
+          {error && <p className='red'>{error}</p>}
+        </div>
+        <div className='title'>
+          <label htmlFor='AddItineraryForm__title'>
+            Title <Required />
+          </label>
+          <Input
+            name='title'
+            type='text'
+            required
+            id='AddItineraryForm__title'>
+          </Input>
+        </div>
+        <div className='start_date'>
+          <label htmlFor='AddItineraryForm__start_date'>
+            Start Date: <Required />
+          </label>
+          <Input
+            name='start_date'
+            type='date' 
+            id='AddItineraryForm__start_date'>
+          </Input>
+        </div>
+        <div className='end_date'>
+          <label htmlFor='AddItineraryForm__end_date'>
+            End Date: <Required />
+          </label>
+          <Input
+            name='end_date'
+            type='date' 
+            id='AddItineraryForm__end_date'>
+          </Input>
+        </div>
+        <Button type='submit'>
+          Add
+        </Button>
+      </form>
+    )}
+}

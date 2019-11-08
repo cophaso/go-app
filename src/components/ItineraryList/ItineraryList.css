@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5;
+  background: #333;
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
+}
+
+ul {
+  margin: 0 auto;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  border: 5px solid #fff;
+  width: 150px;
+  height: 100px;
+  background: #9e9d9d;
+}
+
+.name {
+  text-align: center;
+  display: inline-block;
+}

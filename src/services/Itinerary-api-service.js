@@ -1,11 +1,12 @@
-import TokenService from '../services/token-service'
+import TokenService from './token-service'
 import config from '../config'
 
-const ArticleApiService = {
-  getArticles() {
-    return fetch(`${config.API_ENDPOINT}/articles`, {
+const ItinerariesApiService = {
+  getItineraries() {
+    return fetch(`${config.API_ENDPOINT}/itineraries`, {
       headers: {
-      },
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      }
     })
       .then(res =>
         (!res.ok)
@@ -13,6 +14,26 @@ const ArticleApiService = {
           : res.json()
       )
   },
+
+  postItinerary(data) {
+    console.log(JSON.stringify(
+      data
+    ))
+    return fetch(`${config.API_ENDPOINT}/itineraries`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify(data),
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
+
   getArticle(articleId) {
     return fetch(`${config.API_ENDPOINT}/articles/${articleId}`, {
       headers: {
@@ -57,4 +78,4 @@ const ArticleApiService = {
   }
 }
 
-export default ArticleApiService
+export default ItinerariesApiService

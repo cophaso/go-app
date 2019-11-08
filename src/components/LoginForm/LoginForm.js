@@ -35,6 +35,7 @@ export default class LoginForm extends Component {
       password: password.value,
     })
       .then(res =>{
+        localStorage.setItem('user_id', res.id)
         user_name.value = ''
         password.value = ''
         TokenService.saveAuthToken(res.authToken)

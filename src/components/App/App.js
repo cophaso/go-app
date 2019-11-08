@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-// import PrivateRoute from '../Utils/PrivateRoute'
-import PublicOnlyRoute from '../Utils/PublicOnlyRoute'
+import PrivateRoute from '../Utils/PrivateRoute';
+import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import LandingPage from '../Landing/Landing';
 import Header from '../Header/Header';
-import LoginPage from '../../routes/LoginPage/LoginPage'
-import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage'
-import SignUpPage from '../../routes/SignUpPage/SignUpPage'
+import LoginPage from '../../routes/LoginPage/LoginPage';
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
+import SignUpPage from '../../routes/SignUpPage/SignUpPage';
+import HomePage from '../../routes/HomePage/HomePage';
+import AddItineraryPage from '../../routes/AddItineraryPage/AddItineraryPage';
 
 
 class App extends Component {
@@ -39,10 +41,14 @@ class App extends Component {
               path={'/signup'}
               component={SignUpPage}
             />
-            {/* <PrivateRoute
-              path={'/itineraries'}
-              component={ItinListPage}
-            /> */}
+            <PrivateRoute
+              path={'/home'}
+              component={HomePage}
+            />
+            <PrivateRoute
+              path={'/add-itinerary'}
+              component={AddItineraryPage}
+            />
             <Route
               component={NotFoundPage}
             />

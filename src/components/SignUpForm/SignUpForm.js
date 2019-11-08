@@ -17,7 +17,7 @@ export default class SignUpForm extends Component {
     AuthApiService.postUser({
       user_name: user_name.value,
       password: password.value,
-      firsy_name: first_name.value,
+      first_name: first_name.value,
       last_name: last_name.value,
     })
       .then(user => {
