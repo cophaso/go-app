@@ -10,28 +10,55 @@ body {
   line-height: 1.5;
 }
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  padding: 1% 0;
-  background-color: #aaa;
+.header-landing {
+  margin-top: -100px;
+  padding: 100px 10px;
+  background-color: #ffffff;
+  background-image: url('../../images/LandingPage1.jpeg');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  background-position:center;
 }
 
-header {
-  padding: 45px 15px;
+.slogan {
+  color: white;
+  text-shadow: 3px 3px #000;
+}
+
+.app-name{
+  color: white;
+  font-size: 75px;
+  text-shadow: 4px 4px #000;
+}
+
+.middle{
+  padding: 100px 10px;
+  background-color: #ffffff;
+  background-image: url('../../images/Landing2.jpg');
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+  background-position:center;
+  color: white;
+  text-shadow:
+    0.05em 0 black,
+    0 0.05em black,
+    -0.05em 0 black,
+    0 -0.05em black,
+    -0.05em -0.05em black,
+    -0.05em 0.05em black,
+    0.05em -0.05em black,
+    0.05em 0.05em black;
+  font-size: 25px;
 }
 
 section {
   min-height: 200px;
   padding: 30px 15px;
-  background-color: #bbb;
+  background-color: white;
 }
 
 section:nth-child(even) {
-  background-color: #ddd;
+  background-color: rgb(244, 244, 244);
 }
 
 p {

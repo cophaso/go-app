@@ -16,9 +16,10 @@ const ItinerariesApiService = {
   },
 
   postItinerary(data) {
-    console.log(JSON.stringify(
-      data
-    ))
+    console.log({
+      'content-type': 'application/json',
+      'authorization': `bearer ${TokenService.getAuthToken()}`,
+    })
     return fetch(`${config.API_ENDPOINT}/itineraries`, {
       method: 'POST',
       headers: {
@@ -34,8 +35,8 @@ const ItinerariesApiService = {
       )
   },
 
-  getArticle(articleId) {
-    return fetch(`${config.API_ENDPOINT}/articles/${articleId}`, {
+  getItinerary(itineraryId) {
+    return fetch(`${config.API_ENDPOINT}/itineraries/${itineraryId}`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
@@ -46,8 +47,9 @@ const ItinerariesApiService = {
           : res.json()
       )
   },
-  getArticleComments(articleId) {
-    return fetch(`${config.API_ENDPOINT}/articles/${articleId}/comments`, {
+
+  getItineraryActivityItems(itineraryId) {
+    return fetch(`${config.API_ENDPOINT}/itineraries/${itineraryId}/activity_items`, {
       headers: {
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
@@ -58,17 +60,15 @@ const ItinerariesApiService = {
           : res.json()
       )
   },
-  postComment(articleId, text) {
-    return fetch(`${config.API_ENDPOINT}/comments`, {
+  
+  postActivityItem(itineraryId, data) {
+    return fetch(`${config.API_ENDPOINT}/itineraries/${itineraryId}/activity_items`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
-        article_id: articleId,
-        text,
-      }),
+      body: JSON.stringify(data),
     })
       .then(res =>
         (!res.ok)

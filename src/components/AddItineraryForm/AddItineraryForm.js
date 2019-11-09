@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
 import ItinerariesApiService from '../../services/Itinerary-api-service';
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
-
 
 export default class AddItineraryForm extends Component {
   static defaultProps = {
@@ -11,27 +8,14 @@ export default class AddItineraryForm extends Component {
   }
 
   state = {
-    error: null ,
-    // startDate: new Date()
+    error: null
   };
- 
-  // handleChange = date => {
-  //   this.setState({
-  //     startDate: date
-  //   });
-  // };
 
   handleSubmit = ev => {
     ev.preventDefault()
     const { title, start_date, end_date } = ev.target
 
     this.setState({ error: null })
-    console.log({
-      title: title.value,
-      start_date: start_date.value,
-      end_date: end_date.value,
-      user_id: localStorage.getItem('user_id')
-    })
     
     ItinerariesApiService.postItinerary({
       title: title.value,

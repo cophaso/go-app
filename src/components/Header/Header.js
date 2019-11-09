@@ -16,6 +16,10 @@ export default class Header extends Component {
           to='/'>
           Logout
         </Link>
+        <Link
+          to='/home'>
+          Home
+        </Link>
       </div>
     )
   }

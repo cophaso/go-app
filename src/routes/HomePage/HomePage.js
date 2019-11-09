@@ -31,7 +31,7 @@ export default class HomePage extends Component {
     return(
       <div>
         <header role="banner">
-          <h1>Travel Plans</h1>
+          <h1 className="home-title">Travel Plans</h1>
         </header>
 
         <LinkButton
@@ -40,8 +40,8 @@ export default class HomePage extends Component {
           Add Itinerary
         </LinkButton>
 
-        <div className="list">
-          <ul>
+        <div className="itinerary-list">
+          <ul className="list">
           {error
             ? <p className='red'>There was an error, try again</p>
             : this.renderItineraries()}

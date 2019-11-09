@@ -10,6 +10,8 @@ import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import SignUpPage from '../../routes/SignUpPage/SignUpPage';
 import HomePage from '../../routes/HomePage/HomePage';
 import AddItineraryPage from '../../routes/AddItineraryPage/AddItineraryPage';
+import ItineraryDetailPage from '../../routes/ItineraryDetailPage/ItineraryDetailPage';
+import AddActivityItemPage from '../../routes/AddActivityItemPage/AddActivityItemPage';
 
 
 class App extends Component {
@@ -48,6 +50,16 @@ class App extends Component {
             <PrivateRoute
               path={'/add-itinerary'}
               component={AddItineraryPage}
+            />
+            <PrivateRoute
+              exact
+              path={'/itineraries/:itineraryId'}
+              component={ItineraryDetailPage}
+            />
+            <PrivateRoute
+              exact
+              path={'/itineraries/:itineraryId/add-activity-item'}
+              component={AddActivityItemPage}
             />
             <Route
               component={NotFoundPage}

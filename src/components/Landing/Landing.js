@@ -17,9 +17,9 @@ export default class LandingPage extends Component {
   render() {
     return (
       <div>
-          <header role="banner">
-            <h1>Go!</h1>
-            <h2>Adventure is a path.</h2>
+          <header role="banner" className="header-landing">
+            <h1 className="app-name">Go!</h1>
+            <h2 className="slogan">Adventure is a path.</h2>
           </header>
           <section>
             <header>
@@ -27,19 +27,17 @@ export default class LandingPage extends Component {
             </header>
             <p>Go! helps you plan your next adventure, so there's no more fear of missing out.</p>
           </section>
-          <section>
+          <section className='middle'>
             <header>
                 <h3>See the world, your way.</h3>
             </header>
-            <p>[<em>placeholder for screenshot of Itinerary list</em>]</p>
             <p>Never lose another minute of your vacation planning what to do next.</p>
           </section>
           <section>
             <header>
                 <h3>Keep track of your travels</h3>
             </header>
-            <p>[<em>placeholder for screenshot of Activity Item </em>]</p>
-            <p>Add notes and ratings so you can remember those moments.</p>
+            <p>Keep detailed plans of your journey so you can remember every moment</p>
           </section>
           <section>
             <header>

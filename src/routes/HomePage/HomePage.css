@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5;
+  background: #333;
+  min-height: 400px;
+  margin-bottom: 100px;
+  clear: both;
+}
+
+.list {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.itinerary-item {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px;
+  border: 5px solid #FFA500;
+  width: 150px;
+  height: 100px;
+  background: #9e9d9d;
+}
+
+.name {
+  text-align: center;
+  display: inline-block;
+}
+
+.home-title {
+  color: white;
+}
+
+.ItineraryListItem .name{
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+}
+
+.add-itinerary-button{
+  order: 1px solid #aaa;
+  background-color: #eee;
+  font-size: 1.1em;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-weight: bold;
+}

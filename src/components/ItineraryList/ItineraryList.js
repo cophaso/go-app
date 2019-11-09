@@ -7,11 +7,11 @@ export default class ItineraryList extends Component {
   render() {
     const { itinerary } = this.props
     return(
-        <l1>
-          <Link to={`/itinerary/${itinerary.id}`} className='ItineraryListItem'>
+        <li className='itinerary-item'>
+          <Link to={`/itineraries/${itinerary.id}`} className='ItineraryListItem'>
             <div className="name">{itinerary.title}</div>
           </Link>
-        </l1>     
+        </li>     
     )
   }
 }

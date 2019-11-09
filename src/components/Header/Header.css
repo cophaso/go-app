@@ -38,7 +38,7 @@
 }
 
 .Header__not-logged-in a:last-child {
-  background: rgb(78, 159, 230);
+  background: rgb(252, 181, 0);
   color: white;
   padding: 5px 15px;
   border-radius: 15px;
@@ -49,6 +49,13 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
   padding: 5px 15px;
   border-radius: 15px;
+  margin-left: 10px;
+}
+
+.Header__logged-in a:last-child {
+  background: rgb(252, 181, 0);
+  color: white;
+  margin-right: 10px;
 }
 
 nav {
@@ -59,7 +66,7 @@ nav {
   z-index: 10;
   padding-top: 10px;
   padding-bottom: 50px;
-  background-color: #aaa;
+  background-color: white;
 }
 
 @media screen and (min-width: 450px) {
