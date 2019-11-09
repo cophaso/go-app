@@ -87,4 +87,12 @@ nav {
   .Header__tagline--narrow {
     display: inherit;
   }
+
+  .Header__logged-in {
+    margin-top: 10px;
+  }
+
+  .Header__not-logged-in {
+    margin-top: 10px;
+  }
 }
