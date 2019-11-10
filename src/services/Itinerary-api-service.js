@@ -70,11 +70,28 @@ const ItinerariesApiService = {
       },
       body: JSON.stringify(data),
     })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
+    .then(res =>
+      console.log('response:', res.json)
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
+  },
+
+  deleteItinerary(itineraryId){
+    fetch(`${config.API_ENDPOINT}/itineraries/${itineraryId}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      },
+    })
+      .then(res => {
+        console.log(res)
+        if (!res.ok)
+          return res.json().then(e => Promise.reject(e))
+        return res;
+      })
   }
 }
 

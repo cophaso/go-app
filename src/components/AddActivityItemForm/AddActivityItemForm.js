@@ -2,11 +2,15 @@ import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
 import ItinerariesApiService from '../../services/Itinerary-api-service';
 import ItineraryContext from '../../contexts/ItineraryContext';
+import { Redirect } from 'react-router-dom'
 
 
 export default class AddItineraryForm extends Component {
   static defaultProps = {
-    onAddActivityItemSuccess: () => {}
+    onAddActivityItemSuccess: (itineraryId) => {
+      console.log('redirected')
+      return <Redirect to={`/itineraries/${itineraryId}`}/>
+    }
   }
 
   state = {
@@ -17,7 +21,7 @@ export default class AddItineraryForm extends Component {
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const { itineraryId } = window.location.pathname.split('/')[2]
+    const itineraryId  = Number(window.location.pathname.split('/')[2])
     const { travel_type, 
             title,
             description,
@@ -31,6 +35,8 @@ export default class AddItineraryForm extends Component {
 
     this.setState({ error: null })
 
+    console.log('itinary:', Number(window.location.pathname.split('/')[2]))
+
     ItinerariesApiService.postActivityItem(itineraryId, {
       travel_type: travel_type.value,
       title: title.value,
@@ -43,24 +49,29 @@ export default class AddItineraryForm extends Component {
       url: url.value,
       itinerary_id: itineraryId,
       user_id: localStorage.getItem('user_id')
-    }).then(this.context.addActivityItem)
+    })
+    // .then(this.context.addActivityItem)
     .then(() => {
-        this.props.onAddActivityItemSuccess()
-      })
-      .catch(res => {
-        this.setState({ error: res.error })
-      })
+        this.props.onAddActivityItemSuccess(itineraryId)
+    })
+    .catch(res => {
+      this.setState({ error: res.error })
+    })
   }
 
   render() {
     const { error } = this.state
+    let content
+    if (error != null) {
+      content = <p className='red'>{error.name}</p>
+    }
     return (
       <form
       className='AddActivityItemForm'
         onSubmit={this.handleSubmit}
       >
         <div role='alert'>
-          {error && <p className='red'>{error}</p>}
+          {content}
         </div>
         <div className='title'>
           <label htmlFor='AddActivityItemForm__title'>

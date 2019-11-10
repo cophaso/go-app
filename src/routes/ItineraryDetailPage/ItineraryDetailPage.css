@@ -1,0 +1,15 @@
+.ItineraryPage__activity-items{
+  list-style-type: none;
+  display: block;
+  margin-left: -50px;
+}
+
+.add-activity-item-button {
+  border: 1px solid #aaa;
+  background-color: rgb(252, 181, 0);
+  color: white;
+  font-size: 1.1em;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-weight: bold;
+}

@@ -34,13 +34,18 @@ export default class AddItineraryForm extends Component {
 
   render() {
     const { error } = this.state
+    let content
+    if (error != null) {
+      content = <p className='red'>{error.name}</p>
+    }
+    console.log(error)
     return (
       <form
       className='AddItineraryForm'
         onSubmit={this.handleSubmit}
       >
         <div role='alert'>
-          {error && <p className='red'>{error}</p>}
+          {content}
         </div>
         <div className='title'>
           <label htmlFor='AddItineraryForm__title'>
@@ -59,7 +64,8 @@ export default class AddItineraryForm extends Component {
           </label>
           <Input
             name='start_date'
-            type='date' 
+            type='date'
+            required
             id='AddItineraryForm__start_date'>
           </Input>
         </div>
@@ -69,7 +75,8 @@ export default class AddItineraryForm extends Component {
           </label>
           <Input
             name='end_date'
-            type='date' 
+            type='date'
+            required
             id='AddItineraryForm__end_date'>
           </Input>
         </div>

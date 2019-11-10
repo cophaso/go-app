@@ -65,6 +65,7 @@ export class ItineraryProvider extends Component {
       clearItinerary: this.clearItinerary,
       addActivityItem: this.addActivityItem,
     }
+    
     return (
       <ItineraryContext.Provider value={value}>
         {this.props.children}

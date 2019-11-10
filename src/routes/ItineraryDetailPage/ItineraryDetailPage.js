@@ -72,20 +72,19 @@ function ItineraryActivityItems({ activity_items = [] }) {
       {activity_items.map(activity_item =>
         <li key={activity_item.id} className='ItineraryPage__activity-items'>
           <h3 className='ItineraryPage__activity-items_title'>
-            {activity_item.text}
+            {activity_item.title}
           </h3>
           <p className='ItineraryPage__activity-items_description'>
             {activity_item.description}
           </p>
           <div>
-            {new Date(activity_item.start_date).toDateString()} 
-            - 
-            {new Date(activity_item.end_date).toDateString()}
+            {new Date(activity_item.start_date).toDateString()} to {new Date(activity_item.end_date).toDateString()}
           </div>
           <div>
-            {new Date(activity_item.start_time).getTime().toString()} 
-            - 
-            {new Date(activity_item.end_time).getTime().toString()}
+            Start Time: {new Date(activity_item.start_time).toTimeString()} 
+          </div>
+          <div>
+            End Time: {new Date(activity_item.end_time).toTimeString()}
           </div>
           <div>{activity_item.cost}</div>
           <a href={activity_item.url}>{activity_item.url}</a>
