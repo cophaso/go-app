@@ -3,7 +3,7 @@ import { Button, Input, Required } from '../Utils/Utils'
 import ItinerariesApiService from '../../services/Itinerary-api-service';
 
 
-export default class AddItineraryForm extends Component {
+export default class AddActivityItemForm extends Component {
   static defaultProps = {
     onAddActivityItemSuccess: () => {}
   }
@@ -41,11 +41,10 @@ export default class AddItineraryForm extends Component {
       itinerary_id: itineraryId,
       user_id: localStorage.getItem('user_id')
     })
+    .then( () => this.props.onAddActivityItemSuccess(itineraryId))
     .catch(res => {
       this.setState({ error: res.error })
     })
-
-    this.props.onAddActivityItemSuccess(itineraryId)
   }
 
   render() {
@@ -54,15 +53,11 @@ export default class AddItineraryForm extends Component {
     if (error != null) {
       content = <p className='red'>{error.name}</p>
     }
-    console.log(this.props.itinerary_id)
     return (
       <form
       className='AddActivityItemForm'
         onSubmit={this.handleSubmit}
       >
-        <div role='alert'>
-          {content}
-        </div>
         <div className='title'>
           <label htmlFor='AddActivityItemForm__title'>
             Title <Required />
@@ -79,7 +74,7 @@ export default class AddItineraryForm extends Component {
             Travel Type 
           </label>
           <select name="travel_type">
-            <option value="Accomodations">Accomodations</option>
+            <option value="Accommodations">Accommodations</option>
             <option value="Rentals">Rentals</option>
             <option value="Activity">Activity</option>
             <option value="Event">Event</option>
@@ -98,52 +93,57 @@ export default class AddItineraryForm extends Component {
         </div>
         <div className='start_date'>
           <label htmlFor='AddActivityItemForm__start_date'>
-            Start Date
+            Start Date <Required />
           </label>
           <Input
             name='start_date'
-            type='date' 
+            type='date'
+            required
             id='AddActivityItemForm__start_date'>
           </Input>
         </div>
         <div className='end_date'>
           <label htmlFor='AddActivityItemForm__end_date'>
-            End Date
+            End Date <Required />
           </label>
           <Input
             name='end_date'
-            type='date' 
+            type='date'
+            required
             id='AddActivityItemForm__end_date'>
           </Input>
         </div>
         <div className='start_time'>
           <label htmlFor='AddActivityItemForm__start_time'>
-            Start Time
+            Start Time <Required />
           </label>
           <Input
             name='start_time'
-            type='time' 
+            type='time'
+            required
             id='AddActivityItemForm__start_time'>
           </Input>
         </div>
         <div className='end_time'>
           <label htmlFor='AddActivityItemForm__end_time'>
-            End Time
+            End Time <Required />
           </label>
           <Input
             name='end_time'
-            type='time' 
+            type='time'
+            required
             id='AddActivityItemForm__end_time'>
           </Input>
         </div>
         <div className='cost'>
           <label htmlFor='AddActivityItemForm__cost'>
-            Cost
+            Cost <Required />
           </label>
           <Input
             name='cost'
             type='number' 
             step='any'
+            required
             id='AddActivityItemForm__cost'>
           </Input>
         </div>
@@ -156,6 +156,9 @@ export default class AddItineraryForm extends Component {
             type='text' 
             id='AddActivityItemForm__url'>
           </Input>
+        </div>
+        <div role='alert'>
+          {content}
         </div>
         <Button type='submit'>
           Add

@@ -78,12 +78,12 @@ function ItineraryActivityItems({ activity_items = [] }) {
             {new Date(activity_item.start_date).toDateString()} to {new Date(activity_item.end_date).toDateString()}
           </div>
           <div>
-            Start Time: {new Date(activity_item.start_time).toTimeString()} 
+            Start Time: {activity_item.start_time} 
           </div>
           <div>
-            End Time: {new Date(activity_item.end_time).toTimeString()}
+            End Time: {activity_item.end_time}
           </div>
-          <div>{activity_item.cost}</div>
+          <div>${activity_item.cost}</div>
           <a href={activity_item.url}>{activity_item.url}</a>
         </li>
       )}

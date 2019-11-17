@@ -10,37 +10,44 @@ export default class ItineraryList extends Component {
     onDeleteItinerary: () => {},
     itineraries: []
   }
+
   static contextType = ItineraryContext
 
   handleClickDelete = e => {
     e.preventDefault()
     const itineraryId = this.props.itinerary.id
-
     ItinerariesApiService.deleteItinerary(itineraryId)
-
     this.props.onDeleteItinerary()
-    
+  }
+
+  handleClickEdit = e => {
+    e.preventDefault()
+    const itineraryId = this.props.itinerary.id
+    ItinerariesApiService.getItinerary(itineraryId)
+    // this.props.onDeleteItinerary()
   }
 
   render() {
     const { itinerary } = this.props
     return(
         <li className='itinerary-item'>
+          <div className='btn-holder'>
+            <button 
+              className='Note__delete' 
+              type='button'
+              onClick={this.handleClickDelete}
+            >Delete</button>
+          </div>
+          
           <Link to={`/itineraries/${itinerary.id}`} className='ItineraryListItem'>
             <div className="name">{itinerary.title}</div>
           </Link>
 
-          <button 
-            className='Note__delete' 
+          {/* <button 
+            className='Note__edit' 
             type='button'
-            onClick={this.handleClickDelete}
-          >Delete</button>
-
-        <button 
-          className='Note__edit' 
-          type='button'
-          onClick={this.handleClickEdit}
-        >Edit</button>
+            onClick={this.handleClickEdit}
+          >Edit</button> */}
         </li>
     )
   }

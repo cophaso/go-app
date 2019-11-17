@@ -1,16 +1,5 @@
-.Note__delete {
-  --note-button-height: 20px;
-  background-color: #898989;
-  color: rgb(252, 181, 0);
-  font-size: 12px;
-  position:relative;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  padding: 1px 2px;
-  margin-right: 5px;
-}
 
-.Note__edit {
+/* .Note__edit {
   --note-button-height: 20px;
   background-color: #898989;
   color: rgb(252, 181, 0);
@@ -19,7 +8,7 @@
   border: 1px solid #aaa;
   border-radius: 4px;
   padding: 1px 2px;
-}
+} */
 
 /* .Note__edit, .Note__delete{
   display: block;
