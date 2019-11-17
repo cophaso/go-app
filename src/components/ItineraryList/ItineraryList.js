@@ -17,13 +17,9 @@ export default class ItineraryList extends Component {
     const itineraryId = this.props.itinerary.id
 
     ItinerariesApiService.deleteItinerary(itineraryId)
-      .then(() => {
-        this.context.deleteItinerary(itineraryId)
-        this.props.onDeleteItinerary(itineraryId)
-      })
-      .catch(error => {
-        console.error({ error })
-      })
+
+    this.props.onDeleteItinerary()
+    
   }
 
   render() {

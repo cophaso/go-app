@@ -12,7 +12,6 @@ export default class AddActivityItemPage extends Component {
   }
 
   handleAddActivityItemSuccess = () => {
-    console.log('redirected')
     const  itinerary_id = this.props.location.itinerary_id
     const { location, history } = this.props
     const destination = (location.state || {}).from || `/itineraries/${itinerary_id}`

@@ -38,7 +38,6 @@ export default class AddItineraryForm extends Component {
     if (error != null) {
       content = <p className='red'>{error.name}</p>
     }
-    console.log(error)
     return (
       <form
       className='AddItineraryForm'

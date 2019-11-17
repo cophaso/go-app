@@ -7,6 +7,12 @@ import ItineraryListContext from '../../contexts/ItineraryListContext';
 import './HomePage.css'
 
 export default class HomePage extends Component {
+  static defaultProps = {
+    history: {
+      push: () => {},
+    }
+  }
+
   static contextType = ItineraryListContext
 
   componentDidMount() {
@@ -16,18 +22,13 @@ export default class HomePage extends Component {
       .catch(this.context.setError)
   }
 
-  renderItineraries() {
-    const { itineraryList = [] } = this.context
-    return itineraryList.map(itinerary =>
-      <ItineraryList
-        key={itinerary.id}
-        itinerary={itinerary}
-      />
-    )
+
+  handleDeleteItinerary = () => {
+    window.location.reload()
   }
 
   render(){
-    const { error } = this.context
+    const { error, itineraryList } = this.context
     return(
       <div>
         <header role="banner">
@@ -44,7 +45,13 @@ export default class HomePage extends Component {
           <ul className="list">
           {error
             ? <p className='red'>There was an error, try again</p>
-            : this.renderItineraries()}
+            : itineraryList.map(itinerary =>
+              <ItineraryList
+                key={itinerary.id}
+                itinerary={itinerary}
+                onDeleteItinerary = {this.handleDeleteItinerary}
+              />
+            )}
           </ul>
         </div>
       </div>

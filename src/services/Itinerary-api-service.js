@@ -85,12 +85,11 @@ const ItinerariesApiService = {
         'authorization': `bearer ${TokenService.getAuthToken()}`
       },
     })
-      .then(res => {
-        console.log(res)
-        if (!res.ok)
-          return res.json().then(e => Promise.reject(e))
-        return res;
-      })
+    .then(res =>
+      (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+    )
   }
 }
 
