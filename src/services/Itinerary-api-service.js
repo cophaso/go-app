@@ -71,7 +71,6 @@ const ItinerariesApiService = {
       body: JSON.stringify(data),
     })
     .then(res =>
-      console.log('response:', res.json)
       (!res.ok)
         ? res.json().then(e => Promise.reject(e))
         : res.json()

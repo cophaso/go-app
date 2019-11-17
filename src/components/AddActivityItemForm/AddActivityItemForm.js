@@ -1,27 +1,20 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
 import ItinerariesApiService from '../../services/Itinerary-api-service';
-import ItineraryContext from '../../contexts/ItineraryContext';
-import { Redirect } from 'react-router-dom'
 
 
 export default class AddItineraryForm extends Component {
   static defaultProps = {
-    onAddActivityItemSuccess: (itineraryId) => {
-      console.log('redirected')
-      return <Redirect to={`/itineraries/${itineraryId}`}/>
-    }
+    onAddActivityItemSuccess: () => {}
   }
 
   state = {
     error: null
   };
 
-  static contextType = ItineraryContext
-
   handleSubmit = ev => {
     ev.preventDefault()
-    const itineraryId  = Number(window.location.pathname.split('/')[2])
+    const itineraryId = this.props.itinerary_id
     const { travel_type, 
             title,
             description,
@@ -34,8 +27,6 @@ export default class AddItineraryForm extends Component {
           } = ev.target
 
     this.setState({ error: null })
-
-    console.log('itinary:', Number(window.location.pathname.split('/')[2]))
 
     ItinerariesApiService.postActivityItem(itineraryId, {
       travel_type: travel_type.value,
@@ -50,13 +41,11 @@ export default class AddItineraryForm extends Component {
       itinerary_id: itineraryId,
       user_id: localStorage.getItem('user_id')
     })
-    // .then(this.context.addActivityItem)
-    .then(() => {
-        this.props.onAddActivityItemSuccess(itineraryId)
-    })
     .catch(res => {
       this.setState({ error: res.error })
     })
+
+    this.props.onAddActivityItemSuccess(itineraryId)
   }
 
   render() {
@@ -65,6 +54,7 @@ export default class AddItineraryForm extends Component {
     if (error != null) {
       content = <p className='red'>{error.name}</p>
     }
+    console.log(this.props.itinerary_id)
     return (
       <form
       className='AddActivityItemForm'

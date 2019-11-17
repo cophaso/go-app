@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Section } from '../../components/Utils/Utils'
 import ItinerariesApiService from '../../services/Itinerary-api-service';
 import ItineraryContext from '../../contexts/ItineraryContext';
-import LinkButton from '../../components/Utils/LinkButton';
+// import LinkButton from '../../components/Utils/LinkButton';
+import { Link } from 'react-router-dom'
 import './ItineraryDetailPage.css'
 
 export default class ItineraryDetailPage extends Component {
@@ -27,40 +28,37 @@ export default class ItineraryDetailPage extends Component {
     this.context.clearItinerary()
   }
 
-  renderItinerary() {
-    const { itinerary, activity_items } = this.context
+  render() {
+    const { error, itinerary, activity_items } = this.context
     const start_date = new Date(itinerary.start_date).toDateString()
     const end_date = new Date(itinerary.end_date).toDateString()
-    return (
-      <div className='ItineraryPage__activity-item-list'>
-        <h2>{itinerary.title}</h2>
-        <div>{start_date} - {end_date}</div>
-        <ItineraryActivityItems activity_items={activity_items} />
-      </div>
-    )
-  }
-
-  render() {
-    const { error, itinerary } = this.context
     let content
     if (error) {
       content = (error.error === `Itinerary doesn't exist`)
         ? <p className='red'>Itinerary not found</p>
         : <p className='red'>There was an error</p>
-    } else if (!itinerary.id) {
+    } 
+    else if (!itinerary.id) {
       content = <div className='loading' />
-    } else {
-      content = this.renderItinerary()
-    }
+    } 
     return (
       <Section className='ItineraryPage'>
-        <LinkButton
-          to={`/itineraries/${itinerary.id}/add-activity-item`}
+        <Link
+          to={{
+            pathname: `/itineraries/${itinerary.id}/add-activity-item`,
+            itinerary_id: itinerary.id
+          }}
           className='add-activity-item-button'>
           Add Activity Item
-        </LinkButton>
+        </Link>
 
         {content}
+
+        <div className='ItineraryPage__activity-item-list'>
+          <h2>{itinerary.title}</h2>
+          <div>{start_date} - {end_date}</div>
+          <ItineraryActivityItems activity_items={activity_items} />
+        </div>
       </Section>
     )
   }
