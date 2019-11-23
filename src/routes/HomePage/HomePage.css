@@ -9,6 +9,7 @@ body {
   line-height: 1.5;
   background: #333;
   min-height: 400px;
+  max-height: 100px;
   margin-bottom: 100px;
   clear: both;
 }
