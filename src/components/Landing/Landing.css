@@ -12,11 +12,11 @@ body {
 
 .header-landing {
   margin-top: -40px;
-  padding: 125px 10px;
+  padding: 100px 10px;
   /* Location of the image */
   background-image: url('../../images/LandingPage1.jpeg');
   /* Background image is centered vertically and horizontally at all times */
-  background-position: center center;
+  background-position: center bottom;
   /* Background image doesn't tile */
   background-repeat: no-repeat;
   /* Background image is fixed in the viewport so that it doesn't move when 
@@ -33,11 +33,12 @@ body {
 .slogan {
   color: white;
   text-shadow: 3px 3px #000;
+  font-size: 75px;
 }
 
 .app-name{
   color: white;
-  font-size: 75px;
+  font-size: 100px;
   text-shadow: 4px 4px #000;
 }
 
@@ -68,7 +69,7 @@ body {
     -0.05em 0.05em black,
     0.05em -0.05em black,
     0.05em 0.05em black;
-  font-size: 25px;
+  font-size: 35px;
 }
 
 section {
@@ -79,6 +80,7 @@ section {
 
 section:nth-child(even) {
   background-color: rgb(244, 244, 244);
+  font-size: 25px;
 }
 
 p {
