@@ -35,6 +35,8 @@ export default class HomePage extends Component {
           <h1 className="home-title">Travel Plans</h1>
         </header>
 
+        <h2 className="home-subtitle">Add an itinerary to start your journey!</h2>
+
         <LinkButton
           to='/add-itinerary'
           className='add-itinerary-button'>
@@ -45,13 +47,18 @@ export default class HomePage extends Component {
           <ul className="list">
           {error
             ? <p className='red'>There was an error, try again</p>
-            : itineraryList.map(itinerary =>
-              <ItineraryList
-                key={itinerary.id}
-                itinerary={itinerary}
-                onDeleteItinerary = {this.handleDeleteItinerary}
-              />
-            )}
+            : itineraryList.map(itinerary => {
+              if (itinerary.user.id.toString() === localStorage.getItem('user_id')) {
+               return <ItineraryList
+                        key={itinerary.id}
+                        itinerary={itinerary}
+                        onDeleteItinerary = {this.handleDeleteItinerary}
+                      />
+              }
+              else {
+                return <div key={itinerary.id}></div>
+              }
+              })}
           </ul>
         </div>
       </div>

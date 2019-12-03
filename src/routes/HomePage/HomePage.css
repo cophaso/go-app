@@ -18,6 +18,7 @@ body {
   margin: 0 auto;
   text-align: center;
   display: block;
+  margin-left: -40px;
 }
 
 .itinerary-item {
@@ -31,9 +32,8 @@ body {
 }
 
 .name {
-  text-align: center;
-  display: inline-block;
   font-size: 25px;
+  margin-left: -10px;
 }
 
 .home-title {
@@ -66,4 +66,9 @@ body {
   border: 1px solid white;
   border-radius: 4px;
   padding: 7px 7px;
+  margin-top: 5px;
+}
+
+.home-subtitle {
+  color: white;
 }

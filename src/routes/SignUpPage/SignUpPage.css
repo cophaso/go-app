@@ -1,3 +1,15 @@
 .SignUpPage {
   margin-top: 100px;
 }
+
+.password-validation {
+  font-size: 20px;
+}
+
+.Input {
+  width: 300px;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid black;
+}

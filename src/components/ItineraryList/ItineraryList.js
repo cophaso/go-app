@@ -24,7 +24,6 @@ export default class ItineraryList extends Component {
     e.preventDefault()
     const itineraryId = this.props.itinerary.id
     ItinerariesApiService.getItinerary(itineraryId)
-    // this.props.onDeleteItinerary()
   }
 
   render() {
