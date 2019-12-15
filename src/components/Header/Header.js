@@ -40,14 +40,16 @@ export default class Header extends Component {
     )
   }
 
+
+
   render() {
     return <>
       <nav className='Header'>
         <h1>
-          <Link to='/'>
-            {' '}
-            Go!
-          </Link>
+          {TokenService.hasAuthToken() 
+            ? <Link to='/home'>{' '}Go!</Link>
+            : <Link to='/'>{' '}Go!</Link>
+          }
         </h1>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()

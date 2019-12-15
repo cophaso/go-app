@@ -9,7 +9,12 @@ export default class LoginPage extends Component {
     history: {
       push: () => {},
     },
+    error: {}
   }
+
+  state = {
+    error: null
+  };
 
   handleLoginSuccess = () => {
     const { location, history } = this.props

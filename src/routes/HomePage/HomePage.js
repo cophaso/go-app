@@ -16,7 +16,7 @@ export default class HomePage extends Component {
   static contextType = ItineraryListContext
 
   componentDidMount() {
-    this.context.clearError()
+    this.context.clearError();
     ItinerariesApiService.getItineraries()
       .then(this.context.setItineraryList)
       .catch(this.context.setError)

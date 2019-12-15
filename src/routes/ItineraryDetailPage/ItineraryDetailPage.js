@@ -4,10 +4,16 @@ import ItinerariesApiService from '../../services/Itinerary-api-service';
 import ItineraryContext from '../../contexts/ItineraryContext';
 import { Link } from 'react-router-dom'
 import './ItineraryDetailPage.css'
+import TokenService from '../../services/token-service'
 
 export default class ItineraryDetailPage extends Component {
   static defaultProps = {
-    match: { params: {} },
+    history: {
+      push: () => {},
+    },
+    match: { 
+      params: {} 
+    }
   }
 
   static contextType = ItineraryContext
@@ -17,10 +23,16 @@ export default class ItineraryDetailPage extends Component {
     this.context.clearError()
     ItinerariesApiService.getItinerary(itineraryId)
       .then(this.context.setItinerary)
-      .catch(this.context.setError)
+      .catch(e => {
+        TokenService.clearAuthToken();
+        window.location.pathname = '/login'
+      })
     ItinerariesApiService.getItineraryActivityItems(itineraryId)
       .then(this.context.setActivityItems )
-      .catch(this.context.setError)
+      .catch(e => {
+        TokenService.clearAuthToken();
+        window.location.pathname = '/login';
+      })
   }
 
   componentWillUnmount() {
@@ -38,7 +50,7 @@ export default class ItineraryDetailPage extends Component {
         : <p className='red'>There was an error</p>
     } 
     else if (!itinerary.id) {
-      content = <div className='loading' />
+      content = <div className='loading'>Loading</div>
     } 
     return (
       <Section className='ItineraryPage'>
@@ -90,3 +102,9 @@ function ItineraryActivityItems({ activity_items = [] }) {
     </ul>
   )
 }
+
+// const redirect = () => {
+//   TokenService.clearAuthToken();
+//   console.log('getItineraryActivityItems');
+//   return <Redirect to='/login' />
+// }

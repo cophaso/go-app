@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Input, Required } from '../Utils/Utils'
 import ItinerariesApiService from '../../services/Itinerary-api-service';
-
+import TokenService from '../../services/token-service'
 
 export default class AddActivityItemForm extends Component {
   static defaultProps = {
@@ -44,6 +44,8 @@ export default class AddActivityItemForm extends Component {
     .then( () => this.props.onAddActivityItemSuccess(itineraryId))
     .catch(res => {
       this.setState({ error: res.error })
+      TokenService.clearAuthToken();
+      window.location.pathname = '/login';
     })
   }
 
