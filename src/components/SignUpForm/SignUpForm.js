@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import { Button, Input, Required } from '../Utils/Utils'
-import AuthApiService from '../../services/auth-api-service'
+import React, { Component } from 'react';
+import { Button, Input, Required } from '../Utils/Utils';
+import AuthApiService from '../../services/auth-api-service';
+import TokenService from '../../services/token-service';
 
 export default class SignUpForm extends Component {
   static defaultProps = {
@@ -20,15 +21,28 @@ export default class SignUpForm extends Component {
       first_name: first_name.value,
       last_name: last_name.value,
     })
-      .then(user => {
-        first_name.value = ''
-        last_name.value = ''
-        user_name.value = ''
-        password.value = ''
-        this.props.onRegistrationSuccess()
+      .then(res => {
+        if(typeof res.id !== 'undefined') {
+          AuthApiService.postLogin({
+            user_name: user_name.value,
+            password: password.value,
+          })
+          .then(res => {
+            localStorage.setItem('user_id', res.id)
+            TokenService.saveAuthToken(res.authToken)
+            first_name.value = ''
+            last_name.value = ''
+            user_name.value = ''
+            password.value = ''
+            this.props.onRegistrationSuccess()
+          })
+        }
+        else {
+          this.setState({error: res.error})
+        }
       })
       .catch(res => {
-        this.setState({ error: res.error })
+        throw new Error(res.error);
       })
   }
 

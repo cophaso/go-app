@@ -16,10 +16,6 @@ const ItinerariesApiService = {
   },
 
   postItinerary(data) {
-    console.log({
-      'content-type': 'application/json',
-      'authorization': `bearer ${TokenService.getAuthToken()}`,
-    })
     return fetch(`${config.API_ENDPOINT}/itineraries`, {
       method: 'POST',
       headers: {

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import ItineraryList from '../../components/ItineraryList/ItineraryList';
-// import { Link } from 'react-router-dom'
 import LinkButton from '../../components/Utils/LinkButton';
 import ItinerariesApiService from '../../services/Itinerary-api-service';
 import ItineraryListContext from '../../contexts/ItineraryListContext';
-import './HomePage.css'
+import './HomePage.css';
 
 export default class HomePage extends Component {
   static defaultProps = {

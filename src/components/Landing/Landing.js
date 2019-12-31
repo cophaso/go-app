@@ -4,14 +4,16 @@ import SignUpForm from '../../components/SignUpForm/SignUpForm'
 
 export default class LandingPage extends Component {
   static defaultProps = {
+    location: {},
     history: {
       push: () => {},
     },
   }
 
-  handleRegistrationSuccess = user => {
+  handleRegistrationSuccess = () => {
     const { history } = this.props
-    history.push('/login')
+    history.push('/home')
+    window.location.reload()
   }
 
   render() {
@@ -43,11 +45,18 @@ export default class LandingPage extends Component {
             <header>
                 <h3>Plan Your Journey Now</h3>
             </header>
+            <p>
+              DEMO INFO <br />
+              Test User:   <br />
+                username: tuser <br />
+                password: Password1! <br />
+              Directions: Login with user and make an itinerary item to start planning your trip. Add activities to that itinerary. 
+            </p>
             <SignUpForm
               onRegistrationSuccess={this.handleRegistrationSuccess}
             />
           </section>
-  </div>
+      </div>
     )
   }
 }

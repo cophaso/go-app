@@ -1,18 +1,20 @@
-import React, { Component } from 'react'
-import { Section } from '../../components/Utils/Utils'
-import SignUpForm from '../../components/SignUpForm/SignUpForm'
-import './SignUpPage.css'
+import React, { Component } from 'react';
+import { Section } from '../../components/Utils/Utils';
+import SignUpForm from '../../components/SignUpForm/SignUpForm';
+import './SignUpPage.css';
 
 export default class SignUpPage extends Component {
   static defaultProps = {
+    location: {},
     history: {
       push: () => {},
     },
   }
 
-  handleRegistrationSuccess = user => {
+  handleRegistrationSuccess = () => {
     const { history } = this.props
-    history.push('/login')
+    history.push('/home')
+    window.location.reload()
   }
 
   render() {
