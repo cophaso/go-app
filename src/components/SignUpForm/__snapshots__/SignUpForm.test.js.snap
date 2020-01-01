@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpForm component renders a form.SignUpForm by default 1`] = `
+<form
+  className="RegistrationForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="full_name"
+  >
+    <label
+      htmlFor="RegistrationForm__first_name"
+    >
+      First Name 
+      <Required />
+    </label>
+    <Input
+      id="RegistrationForm__first_name"
+      name="first_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="last_name"
+  >
+    <label
+      htmlFor="RegistrationForm__last_name"
+    >
+      Last Name 
+      <Required />
+    </label>
+    <Input
+      id="RegistrationForm__last_name"
+      name="last_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="user_name"
+  >
+    <label
+      htmlFor="RegistrationForm__user_name"
+    >
+      User Name 
+      <Required />
+    </label>
+    <Input
+      id="RegistrationForm__user_name"
+      name="user_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="password"
+  >
+    <label
+      htmlFor="RegistrationForm__password"
+    >
+      Password 
+      <Required />
+    </label>
+    <p
+      className="password-validation"
+    >
+      Password must be longer than 8 characters contain 1 upper case, lower case, number and special character
+    </p>
+    <Input
+      id="RegistrationForm__password"
+      name="password"
+      required={true}
+      type="password"
+    />
+  </div>
+  <Button
+    type="submit"
+  >
+    Register
+  </Button>
+</form>
+`;
+
+exports[`SignUpForm component renders the SignUpForm given props 1`] = `
+<form
+  className="RegistrationForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="full_name"
+  >
+    <label
+      htmlFor="RegistrationForm__first_name"
+    >
+      First Name 
+      <Required />
+    </label>
+    <Input
+      id="RegistrationForm__first_name"
+      name="first_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="last_name"
+  >
+    <label
+      htmlFor="RegistrationForm__last_name"
+    >
+      Last Name 
+      <Required />
+    </label>
+    <Input
+      id="RegistrationForm__last_name"
+      name="last_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="user_name"
+  >
+    <label
+      htmlFor="RegistrationForm__user_name"
+    >
+      User Name 
+      <Required />
+    </label>
+    <Input
+      id="RegistrationForm__user_name"
+      name="user_name"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="password"
+  >
+    <label
+      htmlFor="RegistrationForm__password"
+    >
+      Password 
+      <Required />
+    </label>
+    <p
+      className="password-validation"
+    >
+      Password must be longer than 8 characters contain 1 upper case, lower case, number and special character
+    </p>
+    <Input
+      id="RegistrationForm__password"
+      name="password"
+      required={true}
+      type="password"
+    />
+  </div>
+  <Button
+    type="submit"
+  >
+    Register
+  </Button>
+</form>
+`;

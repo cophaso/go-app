@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddActivityItemForm component renders a form.AddActivityItemForm by default 1`] = `
+<form
+  className="AddActivityItemForm"
+  onSubmit={[Function]}
+>
+  <div
+    className="title"
+  >
+    <label
+      htmlFor="AddActivityItemForm__title"
+    >
+      Title 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__title"
+      name="title"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="travel_type"
+  >
+    <label
+      htmlFor="AddActivityItemForm__travel-type"
+    >
+      Travel Type
+    </label>
+    <select
+      name="travel_type"
+    >
+      <option
+        value="Accommodations"
+      >
+        Accommodations
+      </option>
+      <option
+        value="Rentals"
+      >
+        Rentals
+      </option>
+      <option
+        value="Activity"
+      >
+        Activity
+      </option>
+      <option
+        value="Event"
+      >
+        Event
+      </option>
+      <option
+        value="Dining and Bars"
+      >
+        Dining and Bars
+      </option>
+    </select>
+  </div>
+  <div
+    className="description"
+  >
+    <label
+      htmlFor="AddActivityItemForm__description"
+    >
+      Description
+    </label>
+    <Input
+      id="AddActivityItemForm__title"
+      name="description"
+      type="textarea"
+    />
+  </div>
+  <div
+    className="start_date"
+  >
+    <label
+      htmlFor="AddActivityItemForm__start_date"
+    >
+      Start Date 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__start_date"
+      name="start_date"
+      required={true}
+      type="date"
+    />
+  </div>
+  <div
+    className="end_date"
+  >
+    <label
+      htmlFor="AddActivityItemForm__end_date"
+    >
+      End Date 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__end_date"
+      name="end_date"
+      required={true}
+      type="date"
+    />
+  </div>
+  <div
+    className="start_time"
+  >
+    <label
+      htmlFor="AddActivityItemForm__start_time"
+    >
+      Start Time 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__start_time"
+      name="start_time"
+      required={true}
+      type="time"
+    />
+  </div>
+  <div
+    className="end_time"
+  >
+    <label
+      htmlFor="AddActivityItemForm__end_time"
+    >
+      End Time 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__end_time"
+      name="end_time"
+      required={true}
+      type="time"
+    />
+  </div>
+  <div
+    className="cost"
+  >
+    <label
+      htmlFor="AddActivityItemForm__cost"
+    >
+      Cost 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__cost"
+      name="cost"
+      required={true}
+      step="any"
+      type="number"
+    />
+  </div>
+  <div
+    className="url"
+  >
+    <label
+      htmlFor="AddActivityItemForm__url"
+    >
+      URL
+    </label>
+    <Input
+      id="AddActivityItemForm__url"
+      name="url"
+      type="text"
+    />
+  </div>
+  <div
+    role="alert"
+  />
+  <Button
+    type="submit"
+  >
+    Add
+  </Button>
+</form>
+`;
+
+exports[`AddActivityItemForm component renders the AddActivityItemForm given props 1`] = `
+<form
+  className="AddActivityItemForm"
+  onSubmit={[Function]}
+>
+  <div
+    className="title"
+  >
+    <label
+      htmlFor="AddActivityItemForm__title"
+    >
+      Title 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__title"
+      name="title"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="travel_type"
+  >
+    <label
+      htmlFor="AddActivityItemForm__travel-type"
+    >
+      Travel Type
+    </label>
+    <select
+      name="travel_type"
+    >
+      <option
+        value="Accommodations"
+      >
+        Accommodations
+      </option>
+      <option
+        value="Rentals"
+      >
+        Rentals
+      </option>
+      <option
+        value="Activity"
+      >
+        Activity
+      </option>
+      <option
+        value="Event"
+      >
+        Event
+      </option>
+      <option
+        value="Dining and Bars"
+      >
+        Dining and Bars
+      </option>
+    </select>
+  </div>
+  <div
+    className="description"
+  >
+    <label
+      htmlFor="AddActivityItemForm__description"
+    >
+      Description
+    </label>
+    <Input
+      id="AddActivityItemForm__title"
+      name="description"
+      type="textarea"
+    />
+  </div>
+  <div
+    className="start_date"
+  >
+    <label
+      htmlFor="AddActivityItemForm__start_date"
+    >
+      Start Date 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__start_date"
+      name="start_date"
+      required={true}
+      type="date"
+    />
+  </div>
+  <div
+    className="end_date"
+  >
+    <label
+      htmlFor="AddActivityItemForm__end_date"
+    >
+      End Date 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__end_date"
+      name="end_date"
+      required={true}
+      type="date"
+    />
+  </div>
+  <div
+    className="start_time"
+  >
+    <label
+      htmlFor="AddActivityItemForm__start_time"
+    >
+      Start Time 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__start_time"
+      name="start_time"
+      required={true}
+      type="time"
+    />
+  </div>
+  <div
+    className="end_time"
+  >
+    <label
+      htmlFor="AddActivityItemForm__end_time"
+    >
+      End Time 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__end_time"
+      name="end_time"
+      required={true}
+      type="time"
+    />
+  </div>
+  <div
+    className="cost"
+  >
+    <label
+      htmlFor="AddActivityItemForm__cost"
+    >
+      Cost 
+      <Required />
+    </label>
+    <Input
+      id="AddActivityItemForm__cost"
+      name="cost"
+      required={true}
+      step="any"
+      type="number"
+    />
+  </div>
+  <div
+    className="url"
+  >
+    <label
+      htmlFor="AddActivityItemForm__url"
+    >
+      URL
+    </label>
+    <Input
+      id="AddActivityItemForm__url"
+      name="url"
+      type="text"
+    />
+  </div>
+  <div
+    role="alert"
+  />
+  <Button
+    type="submit"
+  >
+    Add
+  </Button>
+</form>
+`;

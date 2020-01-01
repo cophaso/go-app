@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddItineraryForm component renders a form.AddItineraryForm by default 1`] = `
+<form
+  className="AddItineraryForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="title"
+  >
+    <label
+      htmlFor="AddItineraryForm__title"
+    >
+      Title 
+      <Required />
+    </label>
+    <Input
+      id="AddItineraryForm__title"
+      name="title"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="start_date"
+  >
+    <label
+      htmlFor="AddItineraryForm__start_date"
+    >
+      Start Date: 
+      <Required />
+    </label>
+    <Input
+      id="AddItineraryForm__start_date"
+      name="start_date"
+      required={true}
+      type="date"
+    />
+  </div>
+  <div
+    className="end_date"
+  >
+    <label
+      htmlFor="AddItineraryForm__end_date"
+    >
+      End Date: 
+      <Required />
+    </label>
+    <Input
+      id="AddItineraryForm__end_date"
+      name="end_date"
+      required={true}
+      type="date"
+    />
+  </div>
+  <Button
+    type="submit"
+  >
+    Add
+  </Button>
+</form>
+`;
+
+exports[`AddItineraryForm component renders the AddItineraryForm given props 1`] = `
+<form
+  className="AddItineraryForm"
+  onSubmit={[Function]}
+>
+  <div
+    role="alert"
+  />
+  <div
+    className="title"
+  >
+    <label
+      htmlFor="AddItineraryForm__title"
+    >
+      Title 
+      <Required />
+    </label>
+    <Input
+      id="AddItineraryForm__title"
+      name="title"
+      required={true}
+      type="text"
+    />
+  </div>
+  <div
+    className="start_date"
+  >
+    <label
+      htmlFor="AddItineraryForm__start_date"
+    >
+      Start Date: 
+      <Required />
+    </label>
+    <Input
+      id="AddItineraryForm__start_date"
+      name="start_date"
+      required={true}
+      type="date"
+    />
+  </div>
+  <div
+    className="end_date"
+  >
+    <label
+      htmlFor="AddItineraryForm__end_date"
+    >
+      End Date: 
+      <Required />
+    </label>
+    <Input
+      id="AddItineraryForm__end_date"
+      name="end_date"
+      required={true}
+      type="date"
+    />
+  </div>
+  <Button
+    type="submit"
+  >
+    Add
+  </Button>
+</form>
+`;

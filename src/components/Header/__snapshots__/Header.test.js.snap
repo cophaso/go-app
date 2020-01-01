@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders a Header by default 1`] = `
+<Fragment>
+  <nav
+    className="Header"
+  >
+    <h1>
+      <Link
+        to="/"
+      >
+         
+        Go!
+      </Link>
+    </h1>
+    <div
+      className="Header__not-logged-in"
+    >
+      <Link
+        to="/login"
+      >
+        Log in
+      </Link>
+      <Link
+        to="/signup"
+      >
+        Sign Up
+      </Link>
+    </div>
+  </nav>
+</Fragment>
+`;
+
+exports[`Header component renders the Header given props 1`] = `
+<Fragment>
+  <nav
+    className="Header"
+  >
+    <h1>
+      <Link
+        to="/"
+      >
+         
+        Go!
+      </Link>
+    </h1>
+    <div
+      className="Header__not-logged-in"
+    >
+      <Link
+        to="/login"
+      >
+        Log in
+      </Link>
+      <Link
+        to="/signup"
+      >
+        Sign Up
+      </Link>
+    </div>
+  </nav>
+</Fragment>
+`;

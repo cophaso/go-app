@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing component renders a Landing by default 1`] = `
+<div>
+  <header
+    className="header-landing"
+    role="banner"
+  >
+    <h1
+      className="app-name"
+    >
+      Go!
+    </h1>
+    <h2
+      className="slogan"
+    >
+      Adventure is a path.
+    </h2>
+  </header>
+  <section>
+    <header>
+      <h3>
+        Travel without regret.
+      </h3>
+    </header>
+    <p>
+      Go! helps you plan your next adventure, so there's no more fear of missing out.
+    </p>
+  </section>
+  <section
+    className="middle"
+  >
+    <header>
+      <h3>
+        See the world, your way.
+      </h3>
+    </header>
+    <p>
+      Never lose another minute of your vacation planning what to do next.
+    </p>
+  </section>
+  <section>
+    <header>
+      <h3>
+        Keep track of your travels
+      </h3>
+    </header>
+    <p>
+      Keep detailed plans of your journey so you can remember every moment
+    </p>
+  </section>
+  <section>
+    <header>
+      <h3>
+        Plan Your Journey Now
+      </h3>
+    </header>
+    <p>
+      DEMO INFO 
+      <br />
+      Test User:   
+      <br />
+      username: tuser 
+      <br />
+      password: Password1! 
+      <br />
+      Directions: Login with user and make an itinerary item to start planning your trip. Add activities to that itinerary.
+    </p>
+    <SignUpForm
+      onRegistrationSuccess={[Function]}
+    />
+  </section>
+</div>
+`;
+
+exports[`Landing component renders the Landing given props 1`] = `
+<div>
+  <header
+    className="header-landing"
+    role="banner"
+  >
+    <h1
+      className="app-name"
+    >
+      Go!
+    </h1>
+    <h2
+      className="slogan"
+    >
+      Adventure is a path.
+    </h2>
+  </header>
+  <section>
+    <header>
+      <h3>
+        Travel without regret.
+      </h3>
+    </header>
+    <p>
+      Go! helps you plan your next adventure, so there's no more fear of missing out.
+    </p>
+  </section>
+  <section
+    className="middle"
+  >
+    <header>
+      <h3>
+        See the world, your way.
+      </h3>
+    </header>
+    <p>
+      Never lose another minute of your vacation planning what to do next.
+    </p>
+  </section>
+  <section>
+    <header>
+      <h3>
+        Keep track of your travels
+      </h3>
+    </header>
+    <p>
+      Keep detailed plans of your journey so you can remember every moment
+    </p>
+  </section>
+  <section>
+    <header>
+      <h3>
+        Plan Your Journey Now
+      </h3>
+    </header>
+    <p>
+      DEMO INFO 
+      <br />
+      Test User:   
+      <br />
+      username: tuser 
+      <br />
+      password: Password1! 
+      <br />
+      Directions: Login with user and make an itinerary item to start planning your trip. Add activities to that itinerary.
+    </p>
+    <SignUpForm
+      onRegistrationSuccess={[Function]}
+    />
+  </section>
+</div>
+`;

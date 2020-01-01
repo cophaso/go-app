@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ItineraryList component renders the ItineraryList given props 1`] = `
+<li
+  className="itinerary-item"
+>
+  <div
+    className="btn-holder"
+  >
+    <button
+      className="Note__delete"
+      onClick={[Function]}
+      type="button"
+    >
+      Delete
+    </button>
+  </div>
+  <Link
+    className="ItineraryListItem"
+    to="/itineraries/1"
+  >
+    <div
+      className="name"
+    >
+      test
+    </div>
+  </Link>
+</li>
+`;
