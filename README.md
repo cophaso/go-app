@@ -11,14 +11,14 @@ React JS, HTML & CSS
 
 ## Screenshots
 
-Landing: 
+### Landing: 
 
-![Landing Page](/Users/crystalophaso/Projects/Go/go-app/public/Screenshots/landing.png)
+![Landing Page](./public/Screenshots/landing.png)
 
-Home/Itineraries List:
+### Home/Itineraries List:
 
-![Home](/Users/crystalophaso/Projects/Go/go-app/public/Screenshots/home.png)
+![Home](./public/Screenshots/home.png)
 
-Itinerary Activity-Items List:
+### Itinerary Activity-Items List:
 
-![Home](/Users/crystalophaso/Projects/Go/go-app/public/Screenshots/itinerary.png)
+![Itinerary](./public/Screenshots/itinerary.png)
