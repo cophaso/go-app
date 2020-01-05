@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './AddActivityItemPage.css'
-import { Section } from '../../components/Utils/Utils'
-import AddActivityItemForm from '../../components/AddActivityItemForm/AddActivityItemForm'
+import './AddActivityItemPage.css';
+import { Section } from '../../components/Utils/Utils';
+import AddActivityItemForm from '../../components/AddActivityItemForm/AddActivityItemForm';
 
 
 export default class AddActivityItemPage extends Component {

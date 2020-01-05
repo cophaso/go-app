@@ -8,15 +8,15 @@ describe(`AddItineraryForm component`, () => {
     className: 'test-class-name',
     children: <p>test children</p>,
     'data-other': 'test-other-prop'
-  }
+  };
 
   it('renders a form.AddItineraryForm by default', () => {
     const wrapper = shallow(<AddItineraryForm />)
     expect(toJson(wrapper)).toMatchSnapshot()
-  })
+  });
 
   it('renders the AddItineraryForm given props', () => {
     const wrapper = shallow(<AddItineraryForm {...props} />)
     expect(toJson(wrapper)).toMatchSnapshot()
-  })
+  });
 })

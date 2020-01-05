@@ -9,10 +9,10 @@ describe(`ItineraryList component`, () => {
       "id": 1,
       "title": "test"
     }
-  }
+  };
 
   it('renders the ItineraryList given props', () => {
     const wrapper = shallow(<ItineraryList {...props} />)
     expect(toJson(wrapper)).toMatchSnapshot()
-  })
+  });
 })

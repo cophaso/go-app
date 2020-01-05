@@ -6,9 +6,9 @@ import TokenService from '../../services/token-service';
 export default class SignUpForm extends Component {
   static defaultProps = {
     onRegistrationSuccess: () => {}
-  }
+  };
 
-  state = { error: null }
+  state = { error: null };
 
   handleSubmit = ev => {
     ev.preventDefault()
@@ -44,10 +44,10 @@ export default class SignUpForm extends Component {
       .catch(res => {
         throw new Error(res.error);
       })
-  }
+  };
 
   render() {
-    const { error } = this.state
+    const { error } = this.state;
     return (
       <form
         className='RegistrationForm'
@@ -106,5 +106,5 @@ export default class SignUpForm extends Component {
         </Button>
       </form>
     )
-  }
+  };
 }

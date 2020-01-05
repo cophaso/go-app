@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Section } from '../../components/Utils/Utils'
+import { Section } from '../../components/Utils/Utils';
 import ItinerariesApiService from '../../services/Itinerary-api-service';
 import ItineraryContext from '../../contexts/ItineraryContext';
-import { Link } from 'react-router-dom'
-import './ItineraryDetailPage.css'
-import TokenService from '../../services/token-service'
+import { Link } from 'react-router-dom';
+import './ItineraryDetailPage.css';
+import TokenService from '../../services/token-service';
 
 export default class ItineraryDetailPage extends Component {
   static defaultProps = {

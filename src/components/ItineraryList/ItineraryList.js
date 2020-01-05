@@ -9,7 +9,7 @@ export default class ItineraryList extends Component {
   static defaultProps ={
     onDeleteItinerary: () => {},
     itineraries: []
-  }
+  };
 
   static contextType = ItineraryContext
 
@@ -18,16 +18,16 @@ export default class ItineraryList extends Component {
     const itineraryId = this.props.itinerary.id
     ItinerariesApiService.deleteItinerary(itineraryId)
     this.props.onDeleteItinerary()
-  }
+  };
 
   handleClickEdit = e => {
     e.preventDefault()
     const itineraryId = this.props.itinerary.id
     ItinerariesApiService.getItinerary(itineraryId)
-  }
+  };
 
   render() {
-    const { itinerary } = this.props
+    const { itinerary } = this.props;
     return(
         <li className='itinerary-item'>
           <div className='btn-holder'>
@@ -41,13 +41,7 @@ export default class ItineraryList extends Component {
           <Link to={`/itineraries/${itinerary.id}`} className='ItineraryListItem'>
             <div className="name">{itinerary.title}</div>
           </Link>
-
-          {/* <button 
-            className='Note__edit' 
-            type='button'
-            onClick={this.handleClickEdit}
-          >Edit</button> */}
         </li>
     )
-  }
+  };
 }

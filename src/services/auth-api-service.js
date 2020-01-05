@@ -1,4 +1,4 @@
-import config from '../config'
+import config from '../config';
 
 const AuthApiService = {
   postLogin({ user_name, password }) {
@@ -20,11 +20,6 @@ const AuthApiService = {
       body: JSON.stringify(user),
     })
       .then(res => res.json())
-      // .then(res =>
-      //   (!res.ok)
-      //     ? res.json().then(e => Promise.reject(e))
-      //     : res.json()
-      // )
   },
 }
 

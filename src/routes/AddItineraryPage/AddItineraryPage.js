@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './AddItineraryPage.css'
-import { Section } from '../../components/Utils/Utils'
-import AddItineraryForm from '../../components/AddItineraryForm/AddItineraryForm'
+import './AddItineraryPage.css';
+import { Section } from '../../components/Utils/Utils';
+import AddItineraryForm from '../../components/AddItineraryForm/AddItineraryForm';
 
 
 export default class AddItineraryPage extends Component {

@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Button, Input, Required } from '../Utils/Utils'
+import React, { Component } from 'react';
+import { Button, Input, Required } from '../Utils/Utils';
 import ItinerariesApiService from '../../services/Itinerary-api-service';
-import TokenService from '../../services/token-service'
+import TokenService from '../../services/token-service';
 
 export default class AddItineraryForm extends Component {
   static defaultProps = {
@@ -32,15 +32,15 @@ export default class AddItineraryForm extends Component {
         this.setState({ error: res.error })
         TokenService.clearAuthToken();
         window.location.pathname = '/login';
-      })
+      });
   }
 
   render() {
-    const { error } = this.state
-    let content
+    const { error } = this.state;
+    let content;
     if (error != null) {
       content = <p className='red'>{error.name}</p>
-    }
+    };
     return (
       <form
       className='AddItineraryForm'
@@ -86,5 +86,5 @@ export default class AddItineraryForm extends Component {
           Add
         </Button>
       </form>
-    )}
+    )};
 }

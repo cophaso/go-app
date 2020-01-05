@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { Button, Input, Required } from '../Utils/Utils'
+import React, { Component } from 'react';
+import { Button, Input, Required } from '../Utils/Utils';
 import ItinerariesApiService from '../../services/Itinerary-api-service';
-import TokenService from '../../services/token-service'
+import TokenService from '../../services/token-service';
 
 export default class AddActivityItemForm extends Component {
   static defaultProps = {
-    onAddActivityItemSuccess: () => {}
-  }
+    onAddActivityItemSuccess: () => { }
+  };
 
   state = {
     error: null
@@ -14,19 +14,19 @@ export default class AddActivityItemForm extends Component {
 
   handleSubmit = ev => {
     ev.preventDefault()
-    const itineraryId = this.props.itinerary_id
-    const { travel_type, 
-            title,
-            description,
-            start_date, 
-            end_date,
-            start_time,
-            end_time,
-            cost,
-            url
-          } = ev.target
+    const itineraryId = this.props.itinerary_id;
+    const { travel_type,
+      title,
+      description,
+      start_date,
+      end_date,
+      start_time,
+      end_time,
+      cost,
+      url
+    } = ev.target;
 
-    this.setState({ error: null })
+    this.setState({ error: null });
 
     ItinerariesApiService.postActivityItem(itineraryId, {
       travel_type: travel_type.value,
@@ -41,23 +41,23 @@ export default class AddActivityItemForm extends Component {
       itinerary_id: itineraryId,
       user_id: localStorage.getItem('user_id')
     })
-    .then( () => this.props.onAddActivityItemSuccess(itineraryId))
-    .catch(res => {
-      this.setState({ error: res.error })
-      TokenService.clearAuthToken();
-      window.location.pathname = '/login';
-    })
+      .then(() => this.props.onAddActivityItemSuccess(itineraryId))
+      .catch(res => {
+        this.setState({ error: res.error })
+        TokenService.clearAuthToken();
+        window.location.pathname = '/login';
+      });
   }
 
   render() {
-    const { error } = this.state
-    let content
+    const { error } = this.state;
+    let content;
     if (error != null) {
       content = <p className='red'>{error.name}</p>
-    }
+    };
     return (
       <form
-      className='AddActivityItemForm'
+        className='AddActivityItemForm'
         onSubmit={this.handleSubmit}
       >
         <div className='title'>
@@ -73,7 +73,7 @@ export default class AddActivityItemForm extends Component {
         </div>
         <div className='travel_type'>
           <label htmlFor='AddActivityItemForm__travel-type'>
-            Travel Type 
+            Travel Type
           </label>
           <select name="travel_type">
             <option value="Accommodations">Accommodations</option>
@@ -85,7 +85,7 @@ export default class AddActivityItemForm extends Component {
         </div>
         <div className='description'>
           <label htmlFor='AddActivityItemForm__description'>
-            Description 
+            Description
           </label>
           <Input
             name='description'
@@ -143,7 +143,7 @@ export default class AddActivityItemForm extends Component {
           </label>
           <Input
             name='cost'
-            type='number' 
+            type='number'
             step='any'
             required
             id='AddActivityItemForm__cost'>
@@ -155,7 +155,7 @@ export default class AddActivityItemForm extends Component {
           </label>
           <Input
             name='url'
-            type='text' 
+            type='text'
             id='AddActivityItemForm__url'>
           </Input>
         </div>
@@ -166,5 +166,6 @@ export default class AddActivityItemForm extends Component {
           Add
         </Button>
       </form>
-    )}
+    )
+  };
 }

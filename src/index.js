@@ -1,9 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import { ItineraryListProvider } from './contexts/ItineraryListContext'
-import { ItineraryProvider } from './contexts/ItineraryContext'
+import { ItineraryListProvider } from './contexts/ItineraryListContext';
+import { ItineraryProvider } from './contexts/ItineraryContext';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
 

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import './Landing.css';
-import SignUpForm from '../../components/SignUpForm/SignUpForm'
+import SignUpForm from '../../components/SignUpForm/SignUpForm';
 
 export default class LandingPage extends Component {
   static defaultProps = {
@@ -8,13 +8,13 @@ export default class LandingPage extends Component {
     history: {
       push: () => {},
     },
-  }
+  };
 
   handleRegistrationSuccess = () => {
     const { history } = this.props
     history.push('/home')
     window.location.reload()
-  }
+  };
 
   render() {
     return (
@@ -58,5 +58,5 @@ export default class LandingPage extends Component {
           </section>
       </div>
     )
-  }
+  };
 }

@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import TokenService from '../../services/token-service'
-import './Header.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import TokenService from '../../services/token-service';
+import './Header.css';
 
 export default class Header extends Component {
   handleLogoutClick = () => {
@@ -23,7 +23,7 @@ export default class Header extends Component {
         </Link>
       </div>
     )
-  }
+  };
 
   renderLoginLink() {
     return (
@@ -38,9 +38,7 @@ export default class Header extends Component {
         </Link>
       </div>
     )
-  }
-
-
+  };
 
   render() {
     return <>
@@ -56,5 +54,5 @@ export default class Header extends Component {
           : this.renderLoginLink()}
       </nav>
     </>
-  }
+  };
 }
